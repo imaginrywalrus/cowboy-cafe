@@ -1,15 +1,12 @@
 ﻿/*
 
-* Author: Nathan Bean
+* Author: Kendall Price
 
-* Edited by: Kendall Price
+* Class name: Entree.cs
 
-* Class name: Side.cs
-
-* Purpose: A base class for side dishes
+* Purpose: A base class for the entree dishes
 
 */
-
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,17 +14,21 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A base class representing a side
+    /// A base class representing an entree
     /// </summary>
-    public abstract class Side
+    public abstract class Entree
     {
         /// <summary>
-        /// Gets the size of the entree
+        /// Gets the special instructions of the entree
         /// </summary>
-        public virtual Size Size { get; set; }
+        public virtual List<string> SpecialInstructions
+        {
+            get { return new List<string>(); }
+            set { }
+        }
 
         /// <summary>
-        /// Gets the price of the side
+        /// Gets the price of the entree
         /// </summary>
         public abstract double Price { get; }
 

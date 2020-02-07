@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: PecosPulledPork.cs
+
+* Purpose: Represents the Pecos Pulled Pork entree on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pecos Pulled Pork entree.
     /// </summary>
-    public class PecosPulledPork
+    public class PecosPulledPork: Entree
     {
         private bool pickle = true;
         /// <summary>
@@ -32,7 +41,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the pork.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -43,7 +52,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the pork.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -54,7 +63,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the pork.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

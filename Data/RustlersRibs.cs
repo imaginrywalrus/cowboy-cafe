@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: RustlersRibs.cs
+
+* Purpose: Represents the Rustlers Ribs entree on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,12 +16,12 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Rustler's Ribs entree.
     /// </summary>
-    public class RustlersRibs
+    public class RustlersRibs: Entree
     {
         /// <summary>
         /// The price of the ribs.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -23,17 +32,12 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the ribs.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
                 return 894;
             }
-        }
-
-        public List<string> SpecialInstructions
-        {
-            get { return new List<string>(); }
         }
     }
 }

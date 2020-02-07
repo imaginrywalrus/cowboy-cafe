@@ -1,11 +1,26 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: CornDodgers.cs
+
+* Purpose: Represents the Corn Dodger side on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CowboyCafe.Data
 {
+    /// <summary>
+    /// A class representing the Corn Dodgers side
+    /// </summary>
     public class CornDodgers: Side
     {
+        /// <summary>
+        /// The price of the Corn Dodgers based on size
+        /// </summary>
         public override double Price
         {
             
@@ -25,6 +40,9 @@ namespace CowboyCafe.Data
                 }
             }
 
+        /// <summary>
+        /// The calories of the Corn Dodgers based on size
+        /// </summary>
         public override uint Calories
         {
             get

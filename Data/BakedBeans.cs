@@ -1,12 +1,10 @@
 ﻿/*
 
-* Author: Nathan Bean
+* Author: Kendall Price
 
-* Edited By: Kendall Price
+* Class name: BakedBeans.cs
 
-* Class name: ChiliCheeseFries.cs
-
-* Purpose: Represents the Chili Cheese Fries side on the menu
+* Purpose: Represents the Baked Beans side dish from the menu
 
 */
 using System;
@@ -16,25 +14,26 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// A class representing the Chili Cheese Fries side
+    /// A class representing the Baked Beans side
     /// </summary>
-    public class ChiliCheeseFries: Side
+    public class BakedBeans: Side
     {
         /// <summary>
-        /// The price of the Chili Cheese Fries based on size
+        /// The price of the Baked Beans based on size
         /// </summary>
         public override double Price
         {
+
             get
             {
                 switch (Size)
                 {
                     case Size.Large:
-                        return 3.99;
-                    case Size.Medium:
-                        return 2.99;
-                    case Size.Small:
                         return 1.99;
+                    case Size.Medium:
+                        return 1.79;
+                    case Size.Small:
+                        return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }
@@ -42,7 +41,7 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
-        /// The calories of the Chili Cheese Fries based on size
+        /// The calories of the Baked Beans based on size
         /// </summary>
         public override uint Calories
         {
@@ -51,11 +50,11 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        return 610;
+                        return 410;
                     case Size.Medium:
-                        return 524;
+                        return 378;
                     case Size.Small:
-                        return 433;
+                        return 312;
                     default:
                         throw new NotImplementedException("Unknown Size.");
                 }

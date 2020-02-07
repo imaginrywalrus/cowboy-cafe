@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: TexasTripleBurger.cs
+
+* Purpose: Represents the Texas Triple Burger entree on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger.
     /// </summary>
-    public class TexasTripleBurger
+    public class TexasTripleBurger: Entree
     {
         private bool bun = true;
         /// <summary>
@@ -112,7 +121,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the burger.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -123,7 +132,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the burger.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -134,7 +143,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the burger.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

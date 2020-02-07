@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: AngryChicken.cs
+
+* Purpose: Represents the Angry Chicken entree on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     ///  A class representing the Angry Chicken entree.
     /// </summary>
-    public class AngryChicken
+    public class AngryChicken: Entree
     {
         private bool pickle = true;
         /// <summary>
@@ -32,7 +41,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The price of the chicken.
         /// </summary>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -43,7 +52,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The calories of the chicken.
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get
             {
@@ -54,7 +63,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// Special instructions for the preparation of the chicken.
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
