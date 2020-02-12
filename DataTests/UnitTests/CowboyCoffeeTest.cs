@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Xunit;
 using CowboyCafe.Data;
-/*
+
 namespace CowboyCafe.DataTests
 {
     public class CowboyCoffeeTest
@@ -25,7 +25,7 @@ namespace CowboyCafe.DataTests
             coffee.Ice = false;
             Assert.False(coffee.Ice);
         }
-
+        
         [Fact]
         public void ShouldBeCaffinatedByDefault()
         {
@@ -42,7 +42,7 @@ namespace CowboyCafe.DataTests
             coffee.Decaf = false;
             Assert.False(coffee.Decaf);
         }
-
+        
         [Fact]
         public void ShouldNotHaveRoomForCreamByDefault()
         {
@@ -125,4 +125,3 @@ namespace CowboyCafe.DataTests
         }
     }
 }
-*/
