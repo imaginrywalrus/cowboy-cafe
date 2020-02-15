@@ -18,25 +18,15 @@ namespace CowboyCafe.Data
     /// </summary>
     public class PecosPulledPork: Entree
     {
-        private bool pickle = true;
         /// <summary>
         /// If the pork is topped with pickles.
         /// </summary>
-        public bool Pickle
-        {
-            get { return pickle; }
-            set { pickle = value; }
-        }
+        public bool Pickle { get; set; } = true;
 
-        private bool bread = true;
         /// <summary>
         /// If the pork is topped with bread.
         /// </summary>
-        public bool Bread
-        {
-            get { return bread; }
-            set { bread = value; }
-        }
+        public bool Bread { get; set; } = true;
 
         /// <summary>
         /// The price of the pork.
@@ -69,8 +59,8 @@ namespace CowboyCafe.Data
             {
                 var instructions = new List<string>();
 
-                if (!pickle) instructions.Add("hold pickle");
-                if (!bread) instructions.Add("hold bread");
+                if (!Pickle) instructions.Add("hold pickle");
+                if (!Bread) instructions.Add("hold bread");
 
                 return instructions;
             }
