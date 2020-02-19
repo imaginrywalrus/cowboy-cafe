@@ -39,5 +39,14 @@ namespace CowboyCafe.Data
                 return 894;
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of the entree
+        /// </summary>
+        /// <returns>The string "Rustlers Ribs"</returns>
+        public override string ToString()
+        {
+            return "Rustler's Ribs";
+        }
     }
 }

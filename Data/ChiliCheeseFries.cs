@@ -61,5 +61,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of the side
+        /// </summary>
+        /// <returns>The ToString of the size + "Chili Cheese Fries"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Chili Cheese Fries";
+        }
     }
 }

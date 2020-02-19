@@ -60,5 +60,14 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of the side
+        /// </summary>
+        /// <returns>The ToString of the size + "Baked Beans"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Baked Beans";
+        }
     }
 }

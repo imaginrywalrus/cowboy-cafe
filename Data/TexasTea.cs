@@ -102,5 +102,18 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns tring representation of the drink
+        /// </summary>
+        /// <returns>the ToString of the size + Sweet or Plain + " Texas Tea"</returns>
+        public override string ToString()
+        {
+            if (Sweet)
+                return Size.ToString() + " Texas Sweet Tea";
+            else
+                return Size.ToString() + " Texas Plain Tea";
+
+        }
     }
 }

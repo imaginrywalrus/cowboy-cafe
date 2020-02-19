@@ -60,6 +60,15 @@ namespace CowboyCafe.Data
                 }
             }
         }
+
+        /// <summary>
+        /// Returns the string representation of the side
+        /// </summary>
+        /// <returns>The ToString of the size + "Corn Dodgers"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Corn Dodgers";
+        }
     }
 }
 

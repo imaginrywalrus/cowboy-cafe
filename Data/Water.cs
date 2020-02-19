@@ -60,5 +60,14 @@ namespace CowboyCafe.Data
                 return instructions;
             }
         }
+
+        /// <summary>
+        /// Returns tring representation of the drink
+        /// </summary>
+        /// <returns>the ToString of the size + " Water"</returns>
+        public override string ToString()
+        {
+            return Size.ToString() + " Water";
+        }
     }
 }
