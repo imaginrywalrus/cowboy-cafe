@@ -14,15 +14,18 @@ using System.Text;
 namespace CowboyCafe.Data
 {
     /// <summary>
-    /// 
+    /// Represents an order item
     /// </summary>
     public interface IOrderItem
     {
         /// <summary>
-        /// 
+        /// The special instructions of the order item
         /// </summary>
         List<string> SpecialInstructions { get; }
 
+        /// <summary>
+        /// the price of the order item
+        /// </summary>
         double Price { get; }
     }
 }

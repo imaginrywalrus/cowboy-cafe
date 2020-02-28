@@ -87,7 +87,7 @@ namespace CowboyCafe.DataTests
         }
 
         [Theory]
-        [InlineData("Subtotal")]
+        [InlineData("Price")]
         [InlineData("Items")]
         public void AddingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
@@ -100,7 +100,7 @@ namespace CowboyCafe.DataTests
         }
 
         [Theory]
-        [InlineData("Subtotal")]
+        [InlineData("Price")]
         [InlineData("Items")]
         public void RemovingAnItemShouldTriggerPropertyChanged(string propertyName)
         {
@@ -111,6 +111,14 @@ namespace CowboyCafe.DataTests
             {
                 order.Remove(item);
             });
+        }
+
+        [Fact]
+        public void OrderNumberShouldBeRandom()
+        {
+            var order = new Order();
+            var order1 = new Order();
+            Assert.NotEqual(order.OrderNumber, order1.OrderNumber);
         }
     }
 }
