@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: OrderSummaryControl.xaml.cs
+
+* Purpose: Represents an order on the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;

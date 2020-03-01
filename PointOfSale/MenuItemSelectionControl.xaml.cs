@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+
+* Author: Kendall Price
+
+* Class name: MenuItemSelectionControl.xaml.cs
+
+* Purpose: Represents the item selection in the menu
+
+*/
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
