@@ -24,11 +24,10 @@ namespace CowboyCafe.Data
         {
             get
             {
-                Random r = new Random();
-                uint i = (uint)r.Next();
+                uint i = 1;
                 while (i == lastOrderNumber)
                 {
-                    i = (uint)r.Next();
+                    i++;
                 }
                 lastOrderNumber = i;
                 return i;
@@ -56,6 +55,7 @@ namespace CowboyCafe.Data
 
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
 
         public void Remove(IOrderItem item)
@@ -63,6 +63,7 @@ namespace CowboyCafe.Data
             items.Remove(item);
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Items"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
         }
     }
 }

@@ -1,13 +1,4 @@
-﻿/*
-
-* Author: Kendall Price
-
-* Class name: OrderControl.xaml.cs
-
-* Purpose: Order Control to hold logic for buttons
-
-*/
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,14 +15,11 @@ using CowboyCafe.Data;
 namespace PointOfSale
 {
     /// <summary>
-    /// Interaction logic for OrderControl.xaml
+    /// Interaction logic for MenuItemSelectionControl.xaml
     /// </summary>
-    public partial class OrderControl : UserControl
+    public partial class MenuItemSelectionControl : UserControl
     {
-        /// <summary>
-        /// constructor for the order control
-        /// </summary>
-        public OrderControl()
+        public MenuItemSelectionControl()
         {
             InitializeComponent();
         }
