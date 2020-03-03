@@ -10,7 +10,11 @@
         <Style TargetType="Button">
             <Setter Property="Height" Value="50"/>
             <Setter Property="Width" Value="125"/>
-            <Setter Property="Background" Value="#CBBBA6"/>
+            <Setter Property="Background" Value="#FF808FA0"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontFamily" Value="Cambria"/>
         </Style>
     </UserControl.Resources>
     <Grid>
@@ -29,7 +33,7 @@
                 <Button Name="CancelOrderButton" Click="CancelOrderButton_Click" Grid.Column="1">Cancel Order</Button>
                 <Button Name="CompleteOrderButton" Click="CompleteOrderButton_Click" Grid.Column="2">Complete Order</Button>
             </Grid>
-            <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl" Height="436"/>
+            <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl"/>
         </StackPanel>
         <local:OrderSummaryControl x:Name="OrderSummaryControl" Grid.Column="1"/>
         

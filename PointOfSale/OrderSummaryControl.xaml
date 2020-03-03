@@ -5,22 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="548" d:DesignWidth="200">
+             d:DesignHeight="650" d:DesignWidth="200">
     <UserControl.Resources>
         <Style TargetType="ListView">
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
 
         <Style TargetType="TextBlock">
-            <!--Font-->
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontFamily" Value="Cambria"/>
-
-            <!--Color scheme-->
-            <Setter Property="Background" Value="#CBBBA6"/>
-            <Setter Property="Foreground" Value="#000000"/>
-
-            <!--Text Alignment-->
+            <Setter Property="Background" Value="#DDD6D6"/>
             <Setter Property="TextAlignment" Value="Left"/>
         </Style>
     </UserControl.Resources>
@@ -35,7 +29,7 @@
             <ListView ItemsSource="{Binding Path=Items}" 
                       FontFamily="Cambria" 
                       FontSize="15"
-                      Height="490">
+                      Height="592">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
