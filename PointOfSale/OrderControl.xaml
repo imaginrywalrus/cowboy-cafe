@@ -33,9 +33,10 @@
                 <Button Name="CancelOrderButton" Click="CancelOrderButton_Click" Grid.Column="1">Cancel Order</Button>
                 <Button Name="CompleteOrderButton" Click="CompleteOrderButton_Click" Grid.Column="2">Complete Order</Button>
             </Grid>
-            <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl"/>
+            <Border Name="Container">
+                <local:MenuItemSelectionControl x:Name="MenuItemSelectionControl"/>
+            </Border>
         </StackPanel>
         <local:OrderSummaryControl x:Name="OrderSummaryControl" Grid.Column="1"/>
-        
     </Grid>
 </UserControl>

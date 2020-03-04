@@ -10,28 +10,67 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// a class representing the cowboy coffee
     /// </summary>
-    public class CowboyCoffee: Drink
+    public class CowboyCoffee: Drink, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The property changed event
+        /// </summary>
+        /// 
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private bool decaf = false;
         /// <summary>
         /// gets if the coffee is decaf or not
         /// </summary>
-        public bool Decaf { get; set; } = false;
+        public bool Decaf
+        {
+            get { return decaf; }
 
+            set
+            {
+                decaf = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool roomForCream = false;
         /// <summary>
         /// gets if there is room for cream in the cowboy coffee
         /// </summary>
-        public bool RoomForCream { get; set; } = false;
+        public bool RoomForCream
+        {
+            get { return roomForCream; }
 
+            set
+            {
+                roomForCream = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
+
+        private bool ice = false;
         /// <summary>
         /// gets the ice in the cowboy coffee
         /// </summary>
-        public override bool Ice { get; set; } = false;
+        public override bool Ice
+        {
+            get { return ice; }
+
+            set
+            {
+                ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
+        }
 
         /// <summary>
         /// the price of the cowboy coffee
@@ -43,10 +82,16 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.60;
                     case Size.Medium:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.10;
                     case Size.Small:
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 0.60;
                     default:
                         throw new NotImplementedException("Unknown Size.");

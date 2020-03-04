@@ -10,14 +10,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing a Drink
     /// </summary>
-    public abstract class Drink: IOrderItem
+    public abstract class Drink: IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The property changed event
+        /// </summary>
+        /// 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// gets the price of the drink
         /// </summary>

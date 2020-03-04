@@ -10,14 +10,20 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.ComponentModel;
 namespace CowboyCafe.Data
 {
     /// <summary>
     /// A base class representing an entree
     /// </summary>
-    public abstract class Entree: IOrderItem
+    public abstract class Entree: IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// The property changed event
+        /// </summary>
+        /// 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Gets the special instructions of the entree
         /// </summary>
