@@ -24,7 +24,7 @@ namespace CowboyCafe.Data
         /// The property changed event
         /// </summary>
         /// 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
        
         private bool cheese = true;
         /// <summary>

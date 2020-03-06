@@ -22,7 +22,7 @@ namespace CowboyCafe.Data
         /// The property changed event
         /// </summary>
         /// 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         private SodaFlavor flavor;
         /// <summary>
@@ -49,16 +49,10 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 2.59;
                     case Size.Medium:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 2.10;
                     case Size.Small:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");

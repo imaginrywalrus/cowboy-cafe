@@ -21,8 +21,8 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The property changed event
         /// </summary>
+        public virtual event PropertyChangedEventHandler PropertyChanged;
         /// 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the special instructions of the entree

@@ -24,7 +24,7 @@ namespace CowboyCafe.Data
         /// The property changed event
         /// </summary>
         /// 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public override event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// The price of the Baked Beans based on size
@@ -37,16 +37,10 @@ namespace CowboyCafe.Data
                 switch (Size)
                 {
                     case Size.Large:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.99;
                     case Size.Medium:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.79;
                     case Size.Small:
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         return 1.59;
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -67,7 +61,7 @@ namespace CowboyCafe.Data
                         return 410;
                     case Size.Medium:
                         return 378;
-                    case Size.Small:
+                    case Size.Small:          
                         return 312;
                     default:
                         throw new NotImplementedException("Unknown Size.");
@@ -82,6 +76,22 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             return Size.ToString() + " Baked Beans";
+        }
+
+        private Size size = Size.Large;
+        /// <summary>
+        /// Gets the size of the side
+        /// </summary>
+        public override Size Size
+        {
+            get { return size; }
+            set
+            {
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
         }
     }
 }
