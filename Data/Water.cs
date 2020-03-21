@@ -18,12 +18,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class Water: Drink, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         private bool lemon = false;
         /// <summary>
         /// gets if there is lemon in the water
@@ -35,8 +29,8 @@ namespace CowboyCafe.Data
             set
             {
                 lemon = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Lemon");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

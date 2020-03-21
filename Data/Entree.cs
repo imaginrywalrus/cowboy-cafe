@@ -21,8 +21,7 @@ namespace CowboyCafe.Data
         /// <summary>
         /// The property changed event
         /// </summary>
-        public virtual event PropertyChangedEventHandler PropertyChanged;
-        /// 
+        public  event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// Gets the special instructions of the entree
@@ -42,5 +41,15 @@ namespace CowboyCafe.Data
         /// Gets the calories of the entree
         /// </summary>
         public abstract uint Calories { get; }
+
+
+        /// <summary>
+        /// Updates the given property
+        /// </summary>
+        /// <param name="property">The property to update</param>
+        protected void InvokePropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
     }
 }

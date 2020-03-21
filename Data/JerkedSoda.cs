@@ -18,12 +18,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class JerkedSoda : Drink, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         private SodaFlavor flavor;
         /// <summary>
         /// the flavor of the jerked soda
@@ -35,7 +29,7 @@ namespace CowboyCafe.Data
             set
             {
                 flavor = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                InvokePropertyChanged("Flavor");
             }
         }
 

@@ -21,12 +21,6 @@ namespace CowboyCafe.Data
     {
 
         /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// The price of the Baked Beans based on size
         /// </summary>
         public override double Price
@@ -76,22 +70,6 @@ namespace CowboyCafe.Data
         public override string ToString()
         {
             return Size.ToString() + " Baked Beans";
-        }
-
-        private Size size = Size.Large;
-        /// <summary>
-        /// Gets the size of the side
-        /// </summary>
-        public override Size Size
-        {
-            get { return size; }
-            set
-            {
-                size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-            }
         }
     }
 }

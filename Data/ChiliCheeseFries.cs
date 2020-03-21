@@ -21,12 +21,6 @@ namespace CowboyCafe.Data
     public class ChiliCheeseFries: Side, INotifyPropertyChanged
     {
         /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// The price of the Chili Cheese Fries based on size
         /// </summary>
         public override double Price

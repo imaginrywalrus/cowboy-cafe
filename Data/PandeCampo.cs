@@ -19,12 +19,6 @@ namespace CowboyCafe.Data
     public class PanDeCampo : Side, INotifyPropertyChanged
     {
         /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
         /// The price of the Pan de Campo based on size
         /// </summary>
         public override double Price

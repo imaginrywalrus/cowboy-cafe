@@ -22,7 +22,7 @@ namespace CowboyCafe.Data
         /// The property changed event
         /// </summary>
         /// 
-        public virtual event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
         /// gets the price of the drink
@@ -43,7 +43,7 @@ namespace CowboyCafe.Data
             set { }
         }
 
-        private Size size;
+        private Size size = Size.Small;
         /// <summary>
         /// gets the size of the drink
         /// </summary>
@@ -53,15 +53,35 @@ namespace CowboyCafe.Data
             set
             {
                 size = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+                InvokePropertyChanged("Size");
+                InvokePropertyChanged("Price");
+                InvokePropertyChanged("Calories");
+            }
+        }
+
+        private bool ice = true;
+        /// <summary>
+        /// gets the ice in the cowboy coffee
+        /// </summary>
+        public virtual bool Ice
+        {
+            get { return ice; }
+
+            set
+            {
+                ice = value;
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
         /// <summary>
-        /// gets if there is any ice in the drink
+        /// Updates the given property
         /// </summary>
-        public virtual bool Ice { get; set; } = true;
+        /// <param name="property">The property to update</param>
+        protected void InvokePropertyChanged(string property)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
     }
 }

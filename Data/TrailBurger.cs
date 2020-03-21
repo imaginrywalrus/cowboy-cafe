@@ -18,11 +18,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class TrailBurger: Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
 
         private bool bun = true;
         /// <summary>
@@ -35,8 +30,8 @@ namespace CowboyCafe.Data
             set
             {
                 bun = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Bun");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -51,24 +46,24 @@ namespace CowboyCafe.Data
             set
             {
                 ketchup = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ketchup");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
-        private bool mustartd = true;
+        private bool mustard = true;
         /// <summary>
         /// If the burger is topped with mustard
         /// </summary>
         public bool Mustard
         {
-            get { return mustartd; }
+            get { return mustard; }
 
             set
             {
-                mustartd = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                mustard = value;
+                InvokePropertyChanged("Mustard");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -83,8 +78,8 @@ namespace CowboyCafe.Data
             set
             {
                 pickle = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Pickle");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -99,8 +94,8 @@ namespace CowboyCafe.Data
             set
             {
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

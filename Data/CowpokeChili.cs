@@ -20,11 +20,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowpokeChili: Entree, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
        
         private bool cheese = true;
         /// <summary>
@@ -36,8 +31,8 @@ namespace CowboyCafe.Data
 
             set {
                 cheese = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Cheese");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -52,8 +47,8 @@ namespace CowboyCafe.Data
             set
             {
                 sourCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SourCream"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("SourCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -68,8 +63,8 @@ namespace CowboyCafe.Data
             set
             {
                 greenOnions = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("GreenOnions"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("GreenOnions");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -84,8 +79,8 @@ namespace CowboyCafe.Data
             set
             {
                 tortillaStrips = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TortillaStrips"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("TortillaStrips");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 

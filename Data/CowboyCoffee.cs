@@ -18,12 +18,6 @@ namespace CowboyCafe.Data
     /// </summary>
     public class CowboyCoffee: Drink, INotifyPropertyChanged
     {
-        /// <summary>
-        /// The property changed event
-        /// </summary>
-        /// 
-        public override event PropertyChangedEventHandler PropertyChanged;
-
         private bool decaf = false;
         /// <summary>
         /// gets if the coffee is decaf or not
@@ -35,8 +29,8 @@ namespace CowboyCafe.Data
             set
             {
                 decaf = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Decaf");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -51,8 +45,8 @@ namespace CowboyCafe.Data
             set
             {
                 roomForCream = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("RoomForCream");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
@@ -67,8 +61,8 @@ namespace CowboyCafe.Data
             set
             {
                 ice = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                InvokePropertyChanged("Ice");
+                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
