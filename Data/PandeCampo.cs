@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Pan de Campo side
     /// </summary>
-    public class PanDeCampo : Side, INotifyPropertyChanged
+    public class PanDeCampo : Side
     {
         /// <summary>
         /// The price of the Pan de Campo based on size

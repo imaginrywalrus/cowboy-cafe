@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Trailburger entree.
     /// </summary>
-    public class TrailBurger: Entree, INotifyPropertyChanged
+    public class TrailBurger: Entree
     {
 
         private bool bun = true;

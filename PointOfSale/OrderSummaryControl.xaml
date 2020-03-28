@@ -11,6 +11,12 @@
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
         </Style>
 
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Background" Value="#FF0000"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+        
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="FontFamily" Value="Cambria"/>
@@ -29,12 +35,14 @@
             <ListView ItemsSource="{Binding Path=Items}" 
                       FontFamily="Cambria" 
                       FontSize="15"
-                      Height="592">
+                      Height="592"
+                      SelectionChanged="AccessItemDataContext">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
+                                <ColumnDefinition Width="50"/>
                                 <ColumnDefinition Width="75"/>
                             </Grid.ColumnDefinitions>
                             <Grid.RowDefinitions>
@@ -43,6 +51,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Text="{Binding}"/>
                             <TextBlock Text="{Binding Path=Price, StringFormat=c}" Grid.Column="1" TextAlignment="Right"/>
+                            <Button Grid.Column="2" Click="OnDeleteItemButtonClicked">X</Button>
                             <ListView ItemsSource="{Binding Path=SpecialInstructions}" Grid.Row="1" Grid.ColumnSpan="2"/>
                         </Grid>
                     </DataTemplate>

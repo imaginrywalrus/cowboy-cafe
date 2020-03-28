@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the texas tea drink
     /// </summary>
-    public class TexasTea: Drink, INotifyPropertyChanged
+    public class TexasTea: Drink
     {
         public bool sweet = true;
         /// <summary>

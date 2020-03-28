@@ -18,7 +18,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Cowpoke Chili entree
     /// </summary>
-    public class CowpokeChili: Entree, INotifyPropertyChanged
+    public class CowpokeChili: Entree
     {
        
         private bool cheese = true;

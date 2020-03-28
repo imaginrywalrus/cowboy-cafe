@@ -19,7 +19,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a side
     /// </summary>
-    public abstract class Side : IOrderItem
+    public abstract class Side : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The property changed event

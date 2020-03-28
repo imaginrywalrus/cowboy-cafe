@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// a class to represent the water drink
     /// </summary>
-    public class Water: Drink, INotifyPropertyChanged
+    public class Water: Drink
     {
         private bool lemon = false;
         /// <summary>

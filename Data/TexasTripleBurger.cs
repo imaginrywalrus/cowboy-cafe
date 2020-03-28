@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Texas Triple Burger.
     /// </summary>
-    public class TexasTripleBurger: Entree, INotifyPropertyChanged
+    public class TexasTripleBurger: Entree
     {
 
         private bool bun = true;

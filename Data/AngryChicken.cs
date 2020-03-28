@@ -17,7 +17,7 @@ namespace CowboyCafe.Data
     /// <summary>
     ///  A class representing the Angry Chicken entree.
     /// </summary>
-    public class AngryChicken: Entree, INotifyPropertyChanged
+    public class AngryChicken: Entree
     {
         private bool pickle = true;
         /// <summary>

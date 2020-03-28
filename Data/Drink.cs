@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A base class representing a Drink
     /// </summary>
-    public abstract class Drink : IOrderItem
+    public abstract class Drink : IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// The property changed event

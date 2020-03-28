@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// A class representing the Jerked Soda drink
     /// </summary>
-    public class JerkedSoda : Drink, INotifyPropertyChanged
+    public class JerkedSoda : Drink
     {
         private SodaFlavor flavor;
         /// <summary>

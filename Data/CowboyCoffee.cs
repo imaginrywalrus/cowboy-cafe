@@ -16,7 +16,7 @@ namespace CowboyCafe.Data
     /// <summary>
     /// a class representing the cowboy coffee
     /// </summary>
-    public class CowboyCoffee: Drink, INotifyPropertyChanged
+    public class CowboyCoffee: Drink
     {
         private bool decaf = false;
         /// <summary>
@@ -30,7 +30,6 @@ namespace CowboyCafe.Data
             {
                 decaf = value;
                 InvokePropertyChanged("Decaf");
-                InvokePropertyChanged("SpecialInstructions");
             }
         }
 
