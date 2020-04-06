@@ -25,5 +25,14 @@ namespace PointOfSale
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Swaps the screen to the given customization element
+        /// </summary>
+        /// <param name="element">The customization screen to be swaped to</param>
+        public void SwapScreen(FrameworkElement element)
+        {
+            Container.Child = element;
+        }
     }
 }

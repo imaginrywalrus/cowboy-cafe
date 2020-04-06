@@ -20,6 +20,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using CowboyCafe.Data;
+using CashRegister;
+using CowboyCafe.PointIOfSale;
+using PointOfSale.ExtensionMethods;
 
 namespace PointOfSale
 {
@@ -34,10 +37,9 @@ namespace PointOfSale
         public OrderControl()
         {
             InitializeComponent();
-
-
             var data = new Order();
             this.DataContext = data;
+            
         }
 
         /// <summary>
@@ -47,7 +49,9 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            var mainWindow = this.FindAncestor<MainWindow>();
+            var screen = new TransactionControl((Order)this.DataContext);
+            mainWindow.SwapScreen(screen);
         }
 
         /// <summary>
@@ -70,6 +74,10 @@ namespace PointOfSale
             Container.Child = new MenuItemSelectionControl();
         }
 
+        /// <summary>
+        /// Swaps the screen to the given customization element
+        /// </summary>
+        /// <param name="element">The customization screen to be swaped to</param>
         public void SwapScreen(FrameworkElement element)
         {
             Container.Child = element;

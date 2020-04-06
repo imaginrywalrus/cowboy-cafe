@@ -61,6 +61,18 @@ namespace CowboyCafe.Data
         }
 
         /// <summary>
+        /// Gets the total for the current order including sales tax
+        /// </summary>
+        public double Total
+        {
+            get
+            {
+                double total = Subtotal * 1.16;
+                return total;
+            }
+        }
+
+        /// <summary>
         /// private backing variable to hold menu items
         /// </summary>
         private List<IOrderItem> items = new List<IOrderItem>();
