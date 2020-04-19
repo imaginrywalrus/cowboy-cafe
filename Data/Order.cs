@@ -29,23 +29,29 @@ namespace CowboyCafe.Data
         /// </summary>
         static private uint lastOrderNumber = 0;
 
+        private uint orderNumber;
         /// <summary>
-        /// Gets the current order number and makes it different from the previous number
+        /// Gets the current order number
         /// </summary>
         public uint OrderNumber
         {
-            get
+            get { return orderNumber; }
+            private set
             {
-                uint i = lastOrderNumber;
-                while (i == lastOrderNumber)
+                if (value != lastOrderNumber)
                 {
-                    i++;
+                    orderNumber = value;
+                    lastOrderNumber = value;
                 }
-                lastOrderNumber = i;
-                return i;
+                else
+                {
+                    orderNumber = lastOrderNumber + 1;
+                    lastOrderNumber = value;
+                }
+
             }
         }
-
+       
         /// <summary>
         /// Gets the subtotal for the current order
         /// </summary>
@@ -81,6 +87,16 @@ namespace CowboyCafe.Data
         /// gets the menu items from the private list
         /// </summary>
         public IEnumerable<IOrderItem> Items => items.ToArray();
+
+        /// <summary>
+        /// Public constructor that initializes the list
+        /// </summary>
+        /// <param name="i">The current order number</param>
+        public Order(uint i)
+        {
+            items = new List<IOrderItem>();
+            OrderNumber = i;
+        }
 
         /// <summary>
         /// Adds a given item to the order

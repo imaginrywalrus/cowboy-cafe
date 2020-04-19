@@ -19,7 +19,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 		CashRegister.dll UML diagram.pdf = CashRegister.dll UML diagram.pdf
 		Cowboy-Cafe Data UML Diagram.pdf = Cowboy-Cafe Data UML Diagram.pdf
 		Cowboy-Cafe Point of Sale UML Diagram.pdf = Cowboy-Cafe Point of Sale UML Diagram.pdf
+		Cowboy-Cafe Website UML.pdf = Cowboy-Cafe Website UML.pdf
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{7FB0E785-1449-4371-879A-B4D46E5EC12B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +42,10 @@ Global
 		{B839C04C-7483-4DDC-AC0F-181054381BF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B839C04C-7483-4DDC-AC0F-181054381BF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B839C04C-7483-4DDC-AC0F-181054381BF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FB0E785-1449-4371-879A-B4D46E5EC12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FB0E785-1449-4371-879A-B4D46E5EC12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FB0E785-1449-4371-879A-B4D46E5EC12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FB0E785-1449-4371-879A-B4D46E5EC12B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

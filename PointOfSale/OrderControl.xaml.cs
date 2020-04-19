@@ -31,14 +31,17 @@ namespace PointOfSale
     /// </summary>
     public partial class OrderControl : UserControl
     {
+        CashDrawer drawer;
+
         /// <summary>
         /// constructor for the order control
         /// </summary>
         public OrderControl()
         {
             InitializeComponent();
-            var data = new Order();
+            var data = new Order(1);
             this.DataContext = data;
+            drawer = new CashDrawer();
             
         }
 
@@ -49,9 +52,13 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CompleteOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = this.FindAncestor<MainWindow>();
-            var screen = new TransactionControl((Order)this.DataContext);
-            mainWindow.SwapScreen(screen);
+            Order order = (Order)DataContext;
+            IOrderItem[] iOrder = (IOrderItem[])order.Items;
+            if (iOrder.Length != 0)
+            {
+                var mainWindow = this.FindAncestor<MainWindow>();
+                mainWindow.SwapScreen(new TransactionControl(drawer, this));
+            }
         }
 
         /// <summary>
@@ -61,7 +68,7 @@ namespace PointOfSale
         /// <param name="e"></param>
         private void CancelOrderButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new Order();
+            this.DataContext = new Order(((Order)DataContext).OrderNumber + 1);
         }
 
         /// <summary>
