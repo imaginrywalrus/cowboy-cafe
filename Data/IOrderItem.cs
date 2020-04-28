@@ -26,5 +26,10 @@ namespace CowboyCafe.Data
         /// the price of the order item
         /// </summary>
         double Price { get; }
+
+        /// <summary>
+        /// the calories of the order item
+        /// </summary>
+        uint Calories { get; }
     }
 }

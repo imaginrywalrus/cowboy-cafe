@@ -46,7 +46,7 @@ namespace CowboyCafe.Data
                 else
                 {
                     orderNumber = lastOrderNumber + 1;
-                    lastOrderNumber = value;
+                    lastOrderNumber = orderNumber;
                 }
 
             }
