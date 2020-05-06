@@ -31,5 +31,7 @@ namespace CowboyCafe.Data
         /// the calories of the order item
         /// </summary>
         uint Calories { get; }
+
+        string Category { get; set; }
     }
 }

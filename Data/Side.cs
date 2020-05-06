@@ -54,6 +54,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
+        public virtual string Category { get; set; } = "Side";
+
         /// <summary>
         /// Gets the special instructions of side if any
         /// </summary>

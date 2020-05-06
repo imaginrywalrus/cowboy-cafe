@@ -34,6 +34,8 @@ namespace CowboyCafe.Data
         /// </summary>
         public abstract uint Calories { get; }
 
+        public virtual string Category { get; set; } = "Drink";
+
         /// <summary>
         /// gets any special instructions for the drink
         /// </summary>

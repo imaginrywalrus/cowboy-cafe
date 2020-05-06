@@ -21,57 +21,73 @@ namespace Website.Pages
         /// <summary>
         /// The menu to display on the website
         /// </summary>
-        public IEnumerable<IOrderItem> menu { get; protected set; }
+        public IEnumerable<IOrderItem> Menus { get; protected set; }
 
         /// <summary>
         /// Gets and sets teh Category filters
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public string[] category { get; set; }
 
         /// <summary>
         /// Gets and sets the search terms
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public string SearchTerms { get; set; }
 
         /// <summary>
         /// Gets and sets the calories minimum amount
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public int? caloriesMin { get; set; }
 
         /// <summary>
         /// Gets and sets the calories maximum amount
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public int? caloriesMax { get; set; }
 
         /// <summary>
         /// Gets and sets the prices minimum amount
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public double? priceMin { get; set; }
 
         /// <summary>
         /// Gets and sets the prices maximum amount
         /// </summary>
+        [BindProperty(SupportsGet = true)]
         public double? priceMax { get; set; }
 
         /// <summary>
         /// Does the response initialization for incoming GET requests
         /// </summary>
-        /// <param name="caloriesMin">Min calories for searches</param>
-        /// <param name="caloriesMax">Max calories for searches</param>
-        /// <param name="priceMin">Min price for searches</param>
-        /// <param name="priceMax">Max price for searches</param>
-        public void OnGet(int? caloriesMin, int? caloriesMax, double? priceMin, double? priceMax)
+        public void OnGet()
         {
-            this.caloriesMin = caloriesMin;
-            this.caloriesMax = caloriesMax;
-            this.priceMax = priceMax;
-            this.priceMin = priceMin;
-            SearchTerms = Request.Query["SearchTerms"];
-            category = Request.Query["category"];
-            menu = Menu.Search(menu, SearchTerms);
-            menu = Menu.FilterByCategory(menu, category);
-            menu = Menu.FilterByCalories(menu, caloriesMin, caloriesMax);
-            menu = Menu.FilterByPrice(menu, priceMin, priceMax);
+            Menus = Menu.All;
+            // Filter search terms
+            if (SearchTerms != null)
+            {
+                Menus = Menus.Where(menu => menu.ToString() != null && menu.ToString().Contains(SearchTerms, StringComparison.CurrentCultureIgnoreCase));
+            }
+
+            // Filter Genre
+            if (category != null && category.Length != 0)
+            {
+                Menus = Menus.Where(menu => menu.Category != null && category.Contains(menu.Category));
+            }
+
+            // Filter IMDB rating
+            if (priceMax != null && priceMin != null)
+            {
+                Menus = Menus.Where(menu => menu.Price >= priceMin && menu.Price <= priceMax);
+            }
+
+            // Filter Rotten Tomatoes rating
+            if (caloriesMin != null && caloriesMax != null)
+            {
+                Menus = Menus.Where(menu => menu.Calories >= caloriesMin && menu.Calories <= caloriesMax);
+            }
         }
     }
 }

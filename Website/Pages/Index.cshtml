@@ -55,123 +55,65 @@ Welcome message from Cowboy Cafe-->
         </div>
     </div>
 
-    <div id="results">
-        <h1>Menu</h1>
-
-        <ul class="menu-list">
-            @foreach (IOrderItem item in @Model.menu)
+    <div class="flex-columns">
+        <div class="Entree">
+            @foreach (IOrderItem item in Model.Menus)
             {
-                @if (item is Entree)
+                if (item is Entree)
                 {
-                    <li>
+                    <div class="menu-item">
+                        <h3>@item</h3>
+                        <div>@string.Format("{0:C}", item.Price)</div>
+                        <div>@(item.Calories) Calories</div>
+                    </div>
+                }
+            }
+        </div>
+
+        <div class="Side">
+            @foreach (IOrderItem item in Model.Menus)
+            {
+                if (item is Side)
+                {
+                    foreach (Size s in (Size[])Enum.GetValues(typeof(Size)))
+                    {
+
                         <div class="menu-item">
+                            <div style="display: none">@(((Side)item).Size = s)</div>
                             <h3>@item</h3>
                             <div>@string.Format("{0:C}", item.Price)</div>
                             <div>@(item.Calories) Calories</div>
                         </div>
-                    </li>
-                }
-
-                else
-                {
-                    <li>
-                        @foreach (Size s in (Size[])Enum.GetValues(typeof(Size)))
-                        {
-                            <div class="menu-item">
-                                @if (item is Side)
-                                {
-                                    @(((Side)item).Size = s);
-                                }
-                                @if (item is Drink)
-                                {
-                                    @(((Drink)item).Size = s);
-                                }
-                                <h3>@item</h3>
-                                <div>@string.Format("{0:C}", item.Price)</div>
-                                <div>@(item.Calories) Calories</div>
-                            </div>
-                        }
-                    </li>
+                    }
                 }
             }
-        </ul>
+        </div>
+
+        <div class="Drink">
+            @foreach (IOrderItem item in Model.Menus)
+            {
+                if (item is Drink)
+                {
+                    foreach (Size s in (Size[])Enum.GetValues(typeof(Size)))
+                    {
+                        <div class="menu-item">
+                            <div style="display: none">@(((Drink)item).Size = s)</div>
+                            <h3>@item</h3>
+                            <div>@string.Format("{0:C}", item.Price)</div>
+                            <div>@(item.Calories) Calories</div>
+                        </div>
+                    }
+
+                    if (item is JerkedSoda)
+                    {
+                        <h3>Soda Flavors</h3>
+                        foreach (SodaFlavor flavor in Enum.GetValues(typeof(SodaFlavor)))
+                        {
+                            <div>@flavor</div>
+                        }
+                    }
+                }
+            }
+        </div>
     </div>
-
-
-
-
-
-
-
-
-    <!--
-    Displays all side from Cowboy Cafe menu.
-        Includes price and calories for each size
-    <div class="Sides">
-        <h2>Sides</h2>
-        @foreach (IOrderItem i in Menu.Side)
-        {
-            <div class="menu-item">
-                @if (i is BakedBeans)
-                {
-                    <h3>Baked Beans</h3>
-                }
-                @if (i is ChiliCheeseFries)
-                {
-                    <h3>Chili Cheese Fries</h3>
-                }
-                @if (i is CornDodgers)
-                {
-                    <h3>Corn Dodgers</h3>
-                }
-                @if (i is PanDeCampo)
-                {
-                    <h3>Pan de Campo</h3>
-                }
-                @foreach (Size s in (Size[])Enum.GetValues(typeof(Size)))
-                {
-                    @(((Side)i).Size = s)
-                    <div>@string.Format("{0:C}", ((Side)i).Price)</div>
-                    <div>@(((Side)i).Calories) Calories</div>
-                }
-            </div>
-        }
-    </div>
-
-    <!--
-    Displays all drinks from Cowboy Cafe menu.
-        Includes price and calories for each size
-    <div class="Drinks">
-        <h2>Drinks</h2>
-        @foreach (IOrderItem i in Menu.Drink)
-        {
-            <div class="menu-item">
-                @if (i is CowboyCoffee)
-                {
-                    <h3>Cowboy Coffee</h3>
-                }
-                @if (i is JerkedSoda)
-                {
-                    <h3>Jerked Soda</h3>
-                }
-                @if (i is TexasTea)
-                {
-                    <h3>Texas Tea</h3>
-                }
-                @if (i is Water)
-                {
-                    <h3>Water</h3>
-                }
-                @foreach (Size s in (Size[])Enum.GetValues(typeof(Size)))
-                {
-                    @(((Drink)i).Size = s)
-
-                    <div>@string.Format("{0:C}", ((Drink)i).Price)</div>
-                    <div>@(((Drink)i).Calories) Calories</div>
-                }
-            </div>
-        }
-    </div>
-        -->
-
 </form>

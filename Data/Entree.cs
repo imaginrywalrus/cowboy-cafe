@@ -43,6 +43,8 @@ namespace CowboyCafe.Data
         public abstract uint Calories { get; }
 
 
+        public virtual string Category { get; set; } = "Entree";
+
         /// <summary>
         /// Updates the given property
         /// </summary>
